@@ -5,16 +5,14 @@ Using time series analysis, the project examines the probability of an increase 
 
 ## Analysis
 The series of prices are marked as P = pt, where t are consecutive days. The downloaded series of P prices was then recoded as follows
-- if there has been an increase in prices, ie Pt> pt-1, then at time t we insert 1;
-- if there has been no price increase, ie Pt <= pt-1, then at time t we put 0.
+- if there has been an increase in prices, ie Pt> pt-1, then 1;
+- if there has been no price increase, ie Pt <= pt-1, then 0.
 
 This functionality is stored in the binaryEncode () function, which takes a price vector as an argument.
 
 Then, the obtained series of zeros and ones were cut into pieces of length n. This functionality was implemented in the cutIntoSequences () function. This function takes any vector and the length of the window as arguments and returns a matrix where the cuts are obtained in rows.
 
 Finally, the format of the obtained data was changed so that each row was saved as a string. For example, "10101", we got this with the encodeAsCharacter () function.
-
-
 Finally, the probability of "patterns" of increases and decreases in prices was determined with the use of the table() function.
 
 ## Summary
